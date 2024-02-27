@@ -1,13 +1,17 @@
 function createCity(properties) {
-  const [name, area, population, mainStreet, mayorName] = properties;
+  const city = {};
 
-  const city = {
-    name: "Dnipro",
-    area: 409,
-    population: 966000,
-    "main street": "Yavornytskogo",
-    "mayor's name": "B. Filatov",
-  };
+  for (let i = 0; i < properties.length; i++) {
+    const property = properties[i];
+    const userInput = prompt(`Enter ${property} for the city:`);
+
+    if (userInput !== null && userInput.trim() !== "") {
+      city[property] = userInput;
+    } else {
+     
+      return {};
+    }
+  }
 
   return city;
 }
@@ -21,4 +25,9 @@ const cityProperties = [
 ];
 
 const dniproCity = createCity(cityProperties);
-console.log(dniproCity);
+
+if (Object.keys(dniproCity).length > 0) {
+  console.log(dniproCity);
+} else {
+  console.log("City creation canceled.");
+}
