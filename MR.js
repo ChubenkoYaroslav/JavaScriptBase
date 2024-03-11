@@ -1,17 +1,24 @@
-const array = ["Сніданок", "Душ", "Спортзал"];
+const tasks = [];
 
-const promptText = prompt("Введіть наступний план на день:");
+while (true) {
+  const userInput = prompt(
+    "Введи нове завдання (або натисни 'Cancel' для завершення):"
+  );
 
-if (promptText !== null) {
-  array.push(promptText);
+  if (userInput === null || userInput.trim() === "") {
+    break;
+  }
+
+  tasks.push(userInput);
 }
 
 const ulElement = document.createElement("ul");
 
-for (let i = 0; i < array.length; i++) {
+for (let i = 0; i < tasks.length; i++) {
   const liElement = document.createElement("li");
-  liElement.textContent = array[i];
+  liElement.textContent = tasks[i];
   ulElement.appendChild(liElement);
 }
 
 document.body.appendChild(ulElement);
+
