@@ -2,7 +2,7 @@ const tasks = [];
 
 while (true) {
   const userInput = prompt(
-    "Введи нове завдання (або натисни 'Cancel' для завершення):"
+    "Введи нове завдання (або натисни 'Відміна' для завершення):"
   );
 
   if (userInput === null || userInput.trim() === "") {
@@ -21,4 +21,3 @@ for (let i = 0; i < tasks.length; i++) {
 }
 
 document.body.appendChild(ulElement);
-
