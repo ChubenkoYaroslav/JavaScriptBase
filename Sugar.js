@@ -31,6 +31,18 @@ function updateTaskList() {
   }
 }
 
+while (true) {
+  const userInput = prompt(
+    "Введи нову позицію необхідної покупки (або натисни 'Відміна' для завершення):"
+  );
+
+  if (userInput === null || userInput.trim() === "") {
+    break;
+  }
+
+  tasks.push(userInput);
+}
+
 const ulElement = document.createElement("ul");
 document.body.appendChild(ulElement);
 
